@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carlos Richter | Dienstleistungen & Lifestyle Management</title>
+    <title>Carlos Richter | Premium Dienstleistungen & Lifestyle Management Berlin</title>
     <style>
         :root {
             --primary: #1a1a1a;
-            --accent: #c5a880; /* Un dorado elegante para el toque premium */
+            --accent: #c5a880;
             --bg: #f9f9f9;
             --text: #333333;
+            --white: #ffffff;
         }
         
         * {
@@ -29,7 +30,7 @@
         .container {
             max-width: 800px;
             margin: 60px auto;
-            background: #ffffff;
+            background: var(--white);
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -39,6 +40,18 @@
             border-bottom: 2px solid #eeeeee;
             padding-bottom: 30px;
             margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .logo-container {
+            max-width: 200px;
+            margin: 0 auto 20px auto;
+        }
+
+        .logo-img {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
 
         h1 {
@@ -46,6 +59,7 @@
             color: var(--primary);
             font-weight: 700;
             letter-spacing: -0.5px;
+            margin-bottom: 10px;
         }
 
         .subtitle {
@@ -54,7 +68,6 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-weight: 600;
-            margin-top: 5px;
         }
 
         section {
@@ -135,14 +148,18 @@
 
     <div class="container">
         <header>
+            <div class="logo-container">
+                <img src="logo-cr.png" alt="Carlos Richter Logo" class="logo-img">
+            </div>
+            
             <h1>Carlos Richter</h1>
-            <div class="subtitle">Premium Dienstleistungen & Lifestyle Management</div>
+            <div class="subtitle">Premium Dienstleistungen & Lifestyle Management Berlin</div>
         </header>
 
         <section id="about">
             <h2>Über mich</h2>
             <p>
-                Ofrezco soluciones integrales de alto nivel en Berlín. Mi enfoque combina la gestión eficiente de activos y propiedades con una asistencia personalizada diseñada para simplificar tu día a día, permitiéndote concentrarte en lo que verdaderamente importa.
+                Ich biete Ihnen anspruchsvolle, maßgeschneiderte und zuverlässige Lösungen in Berlin. Mein Ansatz verbindet eine professionelle und effiziente Immobilienverwaltung mit einem erstklassigen, persönlichen Assistenz-Service. Mein Ziel ist es, Ihren Alltag spürbar zu entlasten, damit Sie sich voll und ganz auf das Wesentliche konzentrieren können.
             </p>
         </section>
 
@@ -151,19 +168,19 @@
             <div class="services-grid">
                 <div class="service-card">
                     <h3>Hausverwaltung</h3>
-                    <p>Administración y optimización operativa de propiedades residenciales con un estándar de organización alemán riguroso.</p>
+                    <p>Strukturierte Verwaltung und operative Betreuung von Wohnimmobilien mit Fokus auf Werterhalt, Transparenz und deutsche Qualitätsstandards.</p>
                 </div>
                 <div class="service-card">
                     <h3>Lifestyle Management</h3>
-                    <p>Asistencia exclusiva y Concierge personalizado para optimizar tu tiempo, gestionar proyectos personales y resolver logística compleja.</p>
+                    <p>Exklusiver Concierge-Service und persönliche Assistenz zur Optimierung Ihres Alltags, Koordination privater Projekte und Übernahme komplexer Logistik.</p>
                 </div>
             </div>
         </section>
 
         <section id="contact">
             <h2>Kontakt</h2>
-            <p>¿Tienes un proyecto en mente o requieres asistencia personalizada en Berlín? Hablemos.</p>
-            <a href="mailto:hausverwaltung@crd-berlin.de" class="cta-button">Enviar un E-Mail</a>
+            <p>Haben Sie ein konkretes Anliegen oder benötigen Sie eine zuverlässige Unterstützung in Berlin? Lassen Sie uns darüber sprechen.</p>
+            <a href="mailto:hausverwaltung@crd-berlin.de" class="cta-button">E-Mail senden</a>
         </section>
 
         <footer>
