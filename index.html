@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carlos Richter | Premium Dienstleistungen & Lifestyle Management Berlin</title>
+    <title>Carlos & Caroline | Exklusives Lifestyle Management & Immobilienverwaltung Berlin</title>
     <style>
         :root {
-            --primary: #1a1a1a;
-            --accent: #c5a880;
-            --bg: #f9f9f9;
-            --text: #333333;
-            --white: #ffffff;
+            --primary-bg: #121212; /* Fondo ultra oscuro y elegante */
+            --card-bg: #1e1e1e; /* Tarjetas gris oscuro */
+            --accent: #d4af37; /* Dorado metálico premium */
+            --text-main: #f5f5f5; /* Blanco suave para lectura cómoda */
+            --text-muted: #a0a0a0; /* Gris para textos secundarios */
+            --border-color: #2a2a2a;
         }
         
         * {
@@ -21,31 +22,34 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
+            background-color: var(--primary-bg);
+            color: var(--text-main);
             line-height: 1.6;
             padding: 20px;
         }
 
         .container {
-            max-width: 800px;
-            margin: 60px auto;
-            background: var(--white);
+            max-width: 900px;
+            margin: 40px auto;
+            background: #181818;
             padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         header {
-            border-bottom: 2px solid #eeeeee;
-            padding-bottom: 30px;
-            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 40px;
+            margin-bottom: 40px;
             text-align: center;
         }
 
         .logo-container {
-            max-width: 200px;
-            margin: 0 auto 20px auto;
+            max-width: 180px;
+            margin: 0 auto 25px auto;
+            /* Filtro para que el logo negro se vea blanco/plateado sobre fondo oscuro */
+            filter: invert(1) brightness(1.5); 
         }
 
         .logo-img {
@@ -55,92 +59,152 @@
         }
 
         h1 {
-            font-size: 2.2rem;
-            color: var(--primary);
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 10px;
+            font-size: 2rem;
+            color: var(--text-main);
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
         }
 
         .subtitle {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--accent);
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             font-weight: 600;
         }
 
         section {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         h2 {
-            font-size: 1.4rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-            border-left: 3px solid var(--accent);
-            padding-left: 10px;
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 25px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
         }
 
         p {
             margin-bottom: 15px;
-            color: #555555;
+            color: var(--text-muted);
             font-size: 1.05rem;
+            text-align: center;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .services-grid {
+        /* Cuadrícula de características */
+        .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 20px;
+            gap: 25px;
+            margin-top: 30px;
         }
 
-        @media (max-width: 600px) {
-            .services-grid {
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 {
                 grid-template-columns: 1fr;
             }
             .container {
-                margin: 20px auto;
+                margin: 10px auto;
                 padding: 20px;
             }
         }
 
-        .service-card {
-            background: #fdfdfd;
-            border: 1px solid #eaeaea;
-            padding: 20px;
-            border-radius: 6px;
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
-        .service-card h3 {
-            font-size: 1.1rem;
-            color: var(--primary);
-            margin-bottom: 8px;
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .card h3 {
+            font-size: 1.15rem;
+            color: var(--accent);
+            margin-bottom: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .card p {
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--text-muted);
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .cta-container {
+            text-align: center;
+            margin-top: 40px;
         }
 
         .cta-button {
             display: inline-block;
-            background-color: var(--primary);
-            color: #ffffff;
-            padding: 12px 25px;
+            background-color: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+            padding: 14px 35px;
             text-decoration: none;
             border-radius: 4px;
             font-weight: 600;
-            transition: background 0.2s ease;
-            margin-top: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
         }
 
         .cta-button:hover {
             background-color: var(--accent);
+            color: #121212;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
         }
 
         footer {
-            margin-top: 50px;
+            margin-top: 60px;
             text-align: center;
-            font-size: 0.9rem;
-            color: #999999;
-            border-top: 1px solid #eeeeee;
-            padding-top: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
         }
     </style>
 </head>
@@ -151,40 +215,76 @@
             <div class="logo-container">
                 <img src="logo-cr.png" alt="Carlos Richter Logo" class="logo-img">
             </div>
-            
-            <h1>Carlos Richter</h1>
-            <div class="subtitle">Premium Dienstleistungen & Lifestyle Management Berlin</div>
+            <h1>Carlos & Caroline</h1>
+            <div class="subtitle">Conserjería de Lujo & Gestión de Estilo de Vida</div>
         </header>
 
-        <section id="about">
-            <h2>Über mich</h2>
-            <p>
-                Ich biete Ihnen anspruchsvolle, maßgeschneiderte und zuverlässige Lösungen in Berlin. Mein Ansatz verbindet eine professionelle und effiziente Immobilienverwaltung mit einem erstklassigen, persönlichen Assistenz-Service. Mein Ziel ist es, Ihren Alltag spürbar zu entlasten, damit Sie sich voll und ganz auf das Wesentliche konzentrieren können.
-            </p>
-        </section>
-
-        <section id="services">
-            <h2>Dienstleistungen</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Hausverwaltung</h3>
-                    <p>Strukturierte Verwaltung und operative Betreuung von Wohnimmobilien mit Fokus auf Werterhalt, Transparenz und deutsche Qualitätsstandards.</p>
+        <!-- Seccion: Diferenciación -->
+        <section id="differentiation">
+            <h2>Diferenzierung</h2>
+            <p>Wir bieten maßgeschneiderte Lösungen für anspruchsvolle Mandanten in Berlin. Unsere Stärke liegt in der perfekten Brücke zwischen Professionalität und absoluter Diskretion.</p>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <span class="tag">Exklusivität</span>
+                    <h3>Hyperpersonalisierung</h3>
+                    <p>Direkter und exklusiver Umgang, der eine unpersönliche Massenabfertigung konsequent vermeidet. Jedes Anliegen wird individuell und mit höchster Priorität behandelt.</p>
                 </div>
-                <div class="service-card">
-                    <h3>Lifestyle Management</h3>
-                    <p>Exklusiver Concierge-Service und persönliche Assistenz zur Optimierung Ihres Alltags, Koordination privater Projekte und Übernahme komplexer Logistik.</p>
+                <div class="card">
+                    <span class="tag">Konnektivität</span>
+                    <h3>Die Brücke Berlin-Kolumbien</h3>
+                    <p>Einzigartiges und sicheres Management für internationale Investitionen, Relocation-Prozesse und komplexe Logistik zwischen Lateinamerika und Deutschland.</p>
                 </div>
             </div>
         </section>
 
+        <!-- Seccion: El Núcleo -->
+        <section id="core">
+            <h2>Das Core-Konzept</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <span class="tag">Das Duo</span>
+                    <h3>Carlos & Caroline</h3>
+                    <p>Dreisprachige Expertise (DE/EN/ES), akribische Organisation und proaktive Lösungen. Wir vereinen deutsches Qualitätsbewusstsein mit globaler Flexibilität.</p>
+                </div>
+                <div class="card">
+                    <span class="tag">Ihr Mehrwert</span>
+                    <h3>Die Kunst, Zeit zu kaufen</h3>
+                    <p>Wir befreien Ihren Terminkalender. Wir übernehmen das Management komplexer bürokratischer Abläufe, Haushaltslogistik und des täglichen Lebens.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seccion: Servicios Clave -->
+        <section id="services">
+            <h2>Key Services</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Relocation & Scout</h3>
+                    <p>Management der deutschen Bürokratie, Begleitung bei Behördengängen und exklusiver Zugang zu Off-Market-Immobilien in Berlin.</p>
+                </div>
+                <div class="card">
+                    <h3>Lifestyle & Property</h3>
+                    <p>Tägliches Residenzmanagement, Koordination von High-End-Mobilität, Instandhaltung und professionelle Hausverwaltung.</p>
+                </div>
+                <div class="card">
+                    <h3>Family Office Support</h3>
+                    <p>Umfassender operativer und logistischer Support für UHNW-Familien zur Entlastung des privaten und geschäftlichen Alltags.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seccion: Contacto -->
         <section id="contact">
             <h2>Kontakt</h2>
-            <p>Haben Sie ein konkretes Anliegen oder benötigen Sie eine zuverlässige Unterstützung in Berlin? Lassen Sie uns darüber sprechen.</p>
-            <a href="mailto:hausverwaltung@crd-berlin.de" class="cta-button">E-Mail senden</a>
+            <p>Haben Sie ein anspruchsvolles Projekt oder benötigen Sie diskreten und erstklassigen Support in Berlin? Lassen Sie uns sprechen.</p>
+            <div class="cta-container">
+                <a href="mailto:hausverwaltung@crd-berlin.de" class="cta-button">Anfrage Senden</a>
+            </div>
         </section>
 
         <footer>
-            <p>© 2026 Carlos Richter Dienstleistungen. Alle Rechte vorbehalten.</p>
+            <p>© 2026 Carlos & Caroline Dienstleistungen. Alle Rechte vorbehalten.</p>
         </footer>
     </div>
 
