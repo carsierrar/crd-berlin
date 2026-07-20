@@ -259,3 +259,70 @@ font-size:2.2rem;
 }
 
 }
+.why{
+
+    padding:120px 0;
+
+}
+
+.why h2{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:2.8rem;
+
+    margin:20px 0 60px;
+
+}
+
+.why-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:40px;
+
+}
+
+.why-item{
+
+    padding-bottom:25px;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+.why-item h3{
+
+    font-size:1.4rem;
+
+    margin-bottom:15px;
+
+    color:#B68C47;
+
+}
+
+.why-item p{
+
+    line-height:1.8;
+
+    color:#666;
+
+}
+
+@media(max-width:900px){
+
+.why-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.why h2{
+
+font-size:2.2rem;
+
+}
+
+}
