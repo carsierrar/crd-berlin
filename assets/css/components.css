@@ -1,1 +1,83 @@
+.navbar{
 
+    height:90px;
+
+    display:flex;
+
+    align-items:center;
+
+    border-bottom:1px solid #ececec;
+
+    background:white;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+}
+
+.navbar .container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.logo{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
+
+nav ul{
+
+    display:flex;
+
+    gap:40px;
+
+}
+
+nav a{
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:.25s;
+
+}
+
+nav a:hover{
+
+    color:#B68C47;
+
+}
+
+.btn-primary{
+
+    background:#B68C47;
+
+    color:white;
+
+    padding:14px 26px;
+
+    border-radius:8px;
+
+    transition:.25s;
+
+}
+
+.btn-primary:hover{
+
+    opacity:.9;
+
+}
