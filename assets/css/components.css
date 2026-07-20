@@ -8,7 +8,9 @@
 
     border-bottom:1px solid #ececec;
 
-    background:white;
+    background:rgba(252,251,248,.92);
+
+backdrop-filter:blur(12px);
 
     position:sticky;
 
@@ -64,15 +66,27 @@ nav a:hover{
 
 .btn-primary{
 
-    background:#B68C47;
+background:#B08A46;
 
-    color:white;
+color:white;
 
-    padding:14px 26px;
+padding:15px 28px;
 
-    border-radius:8px;
+border-radius:10px;
 
-    transition:.25s;
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.btn-primary:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 12px 30px rgba(176,138,70,.25);
+
+}
 
 }
 
