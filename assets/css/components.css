@@ -162,3 +162,100 @@ nav a:hover{
     color:white;
 
 }
+.services{
+
+    padding:120px 0;
+
+    background:#fafafa;
+
+}
+
+.section-tag{
+
+    color:#B68C47;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+}
+
+.services h2{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:2.8rem;
+
+    margin:20px 0 60px;
+
+    max-width:650px;
+
+}
+
+.services-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+.service-card{
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:14px;
+
+    border:1px solid #ececec;
+
+    transition:.3s;
+
+}
+
+.service-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+
+}
+
+.service-card h3{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:1.7rem;
+
+    margin-bottom:20px;
+
+}
+
+.service-card p{
+
+    color:#666;
+
+    line-height:1.7;
+
+}
+
+@media(max-width:900px){
+
+.services-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.services h2{
+
+font-size:2.2rem;
+
+}
+
+}
