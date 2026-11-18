@@ -9,15 +9,14 @@
     <title>CRD Berlin | Concierge, Property Management &amp; Relocation in Berlin</title>
 
     <meta name="description"
-          content="Premium concierge, property management and relocation services in Berlin. Tailored personal assistance delivered with professionalism, discretion and efficiency.">
+          content="Personal concierge, property management and relocation services in Berlin. One reliable local contact for everything you need – discreet, available 24/7.">
 
     <link rel="canonical" href="https://crd-berlin.de/">
 
-    <!-- Open Graph / social sharing -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="CRD Berlin">
-    <meta property="og:title" content="CRD Berlin | Concierge &amp; Lifestyle Management">
-    <meta property="og:description" content="Premium concierge, property management and relocation services in Berlin.">
+    <meta property="og:title" content="CRD Berlin | Concierge, Property Management &amp; Relocation">
+    <meta property="og:description" content="One reliable local contact in Berlin for your home, your move and your everyday life.">
     <meta property="og:url" content="https://crd-berlin.de/">
     <meta property="og:image" content="https://crd-berlin.de/assets/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
@@ -25,24 +24,22 @@
     <meta property="og:locale" content="en_GB">
     <meta name="twitter:card" content="summary_large_image">
 
-    <meta name="theme-color" content="#111111">
+    <meta name="theme-color" content="#0f1e1d">
 
-    <!-- Favicons -->
     <link rel="icon" href="assets/images/favicon.ico" sizes="48x48">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
 
-    <!-- Fonts are self-hosted (no requests to Google, GDPR-friendly) -->
-    <link rel="preload" href="assets/fonts/inter-400.woff" as="font" type="font/woff" crossorigin>
-    <link rel="preload" href="assets/fonts/inter-600.woff" as="font" type="font/woff" crossorigin>
-    <link rel="preload" href="assets/images/hero.webp" as="image" type="image/webp">
+    <link rel="preload" href="assets/fonts/cardo-regular.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="assets/fonts/dmsans-var.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="assets/images/berlin-arch.webp" as="image" type="image/webp">
+
+    <script>document.documentElement.classList.add("js");</script>
 
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
 
-    <!-- Structured data for Google -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -83,41 +80,27 @@ HEADER
 ======================================= -->
 
 <header class="header">
-
-    <div class="container header-container">
+    <div class="container header-inner">
 
         <a href="#home" class="logo" aria-label="CRD Berlin – home">
-            <img id="site-logo"
-                 src="assets/images/logo-light.webp"
-                 alt="CRD Berlin"
-                 width="379" height="160">
+            <img id="site-logo" src="assets/images/logo-light.webp" alt="CRD Berlin" width="379" height="160">
         </a>
 
         <nav class="navigation" id="main-navigation" aria-label="Main navigation">
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#team">Our Team</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#approach">Approach</a></li>
+                <li><a href="#approach">How we work</a></li>
+                <li><a href="#team">About us</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <a href="#contact" class="btn btn-brass nav-cta">Book a consultation</a>
         </nav>
 
-        <a href="#contact" class="header-button">Request Consultation</a>
-
-        <button class="mobile-toggle"
-                type="button"
-                aria-label="Open navigation"
-                aria-controls="main-navigation"
-                aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
+        <button class="mobile-toggle" type="button" aria-label="Open navigation" aria-controls="main-navigation" aria-expanded="false">
+            <span></span><span></span>
         </button>
 
     </div>
-
 </header>
 
 <main id="main">
@@ -127,99 +110,63 @@ HERO
 ======================================= -->
 
 <section class="hero" id="home">
+    <div class="container hero-grid">
 
-    <div class="hero-overlay"></div>
+        <div class="hero-copy">
+            <p class="hero-kicker">Concierge, property management and relocation in Berlin</p>
 
-    <div class="container hero-container">
+            <h1>Whatever you need in Berlin, we’ll take care of&nbsp;it.</h1>
 
-        <div class="hero-content">
-
-            <span class="hero-label">Property Management · Concierge · Relocation</span>
-
-            <h1>
-                Whatever you need.
-                <span>We'll take care of it.</span>
-            </h1>
-
-            <p>
-                We help private clients, international professionals and businesses
-                save time through premium concierge, property management and lifestyle
-                services – delivered with discretion, reliability and exceptional
-                attention to detail.
+            <p class="hero-lead">
+                One reliable local contact for your apartment, your move and the everyday
+                tasks that take up your time. Personal, discreet and available around the clock.
             </p>
 
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-light">Book a Consultation</a>
-                <a href="#services" class="btn btn-secondary">Explore Services</a>
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-brass">Book a consultation</a>
+                <a href="#services" class="btn btn-ghost">See our services</a>
             </div>
-
         </div>
+
+        <figure class="hero-arch">
+            <picture>
+                <source srcset="assets/images/berlin-arch.webp" type="image/webp">
+                <img src="assets/images/berlin-arch.jpg" alt="View over central Berlin with the TV tower, the Red Town Hall and the river Spree" width="958" height="1199">
+            </picture>
+        </figure>
 
     </div>
 
-    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
-        <span></span>
-    </a>
-
-</section>
-
-<!-- ======================================
-ABOUT
-======================================= -->
-
-<section class="about section" id="about">
     <div class="container">
-        <div class="section-title">
-            <span>About CRD Berlin</span>
-            <h2>Trusted local expertise with international standards.</h2>
-        </div>
-        <div class="about-grid">
-            <div class="about-content">
-                <h3>Personal assistance designed around your lifestyle.</h3>
-                <p>At CRD Berlin we believe that exceptional service begins with trust. Every request is handled with complete discretion, professionalism and attention to detail.</p>
-                <p>Whether you need property management, relocation assistance, reservations, administrative support or simply someone you can rely on locally, our goal is always the same.</p>
-            </div>
-            <aside class="about-note">
-                <span>Our promise</span>
-                <p>“To simplify your life so you can focus on what truly matters.”</p>
-                <small>CRD Berlin</small>
-            </aside>
-        </div>
+        <ul class="hero-facts">
+            <li><strong>24/7</strong> Reachable day and night</li>
+            <li><strong>Moabit</strong> Based in central Berlin</li>
+            <li><strong>One contact</strong> From first call to finished job</li>
+        </ul>
     </div>
 </section>
 
 <!-- ======================================
-TEAM
+INTRO
 ======================================= -->
 
-<section class="team section" id="team">
-    <div class="container">
-        <div class="section-title">
-            <span>Our Team</span>
-            <h2>A personal service, delivered by real people.</h2>
-            <p>Get to know the people behind CRD Berlin. We offer attentive local support built on trust, discretion and a genuine understanding of what makes life in Berlin easier.</p>
-        </div>
-        <div class="team-grid">
-            <article class="team-card">
-                <picture>
-                    <source srcset="assets/images/caroline.webp" type="image/webp">
-                    <img src="assets/images/caroline.jpg" alt="Caroline, co-founder of CRD Berlin" loading="lazy" decoding="async" width="865" height="1400">
-                </picture>
-                <div class="team-card-copy">
-                    <h3>Caroline</h3>
-                    <p>Co-Founder · Local support with a personal touch</p>
-                </div>
-            </article>
-            <article class="team-card">
-                <picture>
-                    <source srcset="assets/images/co-founder.webp" type="image/webp">
-                    <img src="assets/images/co-founder.jpg" alt="Carlos, founder of CRD Berlin" loading="lazy" decoding="async" width="993" height="1400">
-                </picture>
-                <div class="team-card-copy">
-                    <h3>Carlos</h3>
-                    <p>Founder</p>
-                </div>
-            </article>
+<section class="intro" id="about">
+    <div class="container intro-grid">
+        <h2 class="intro-statement">
+            Trusted local expertise, international standards. We handle every request
+            with discretion, care and attention to detail, so you can focus on what
+            truly matters.
+        </h2>
+        <div class="intro-side">
+            <p>
+                Whether you own an apartment in Berlin, are moving here for work, or simply
+                need someone dependable on the ground, CRD Berlin coordinates the people,
+                appointments and paperwork for you.
+            </p>
+            <p>
+                You speak to the same people every time, and you always know who is
+                looking after your request.
+            </p>
         </div>
     </div>
 </section>
@@ -228,252 +175,242 @@ TEAM
 SERVICES
 ======================================= -->
 
-<section class="services section" id="services">
-
+<section class="services" id="services">
     <div class="container">
 
-        <div class="section-title">
-            <span>Our Services</span>
-            <h2>Tailored solutions for your life in Berlin.</h2>
-            <p>Every service is designed to remove complexity, save valuable time and provide complete peace of mind.</p>
-        </div>
+        <header class="section-head">
+            <h2>Services</h2>
+            <p>Four ways we make life in Berlin simpler. Combine them, or ask us for something entirely bespoke.</p>
+        </header>
 
-        <div class="services-grid">
+        <ol class="service-list">
 
-            <article class="service-card">
-                <div class="service-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24"><path d="M3 18h18M5 18a7 7 0 0 1 14 0M12 8V6m-2 0h4"/></svg>
-                </div>
-                <h3>Concierge Services</h3>
-                <p>Restaurant reservations, event planning, personal shopping, appointments, travel assistance and day-to-day coordination.</p>
-                <a href="#contact" class="service-link" data-service="Concierge Services">Enquire now <span aria-hidden="true">→</span></a>
-            </article>
+            <li class="service">
+                <h3>Property management</h3>
+                <p class="service-desc">Professional supervision of your apartment while you are away or busy.</p>
+                <ul class="service-tags">
+                    <li>Maintenance &amp; repairs</li>
+                    <li>Tenant communication</li>
+                    <li>Inspections</li>
+                    <li>Key handling</li>
+                </ul>
+                <a href="#contact" class="service-cta" data-service="Property Management">Enquire</a>
+            </li>
 
-            <article class="service-card">
-                <div class="service-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5M5.5 9.5V20h13V9.5M10 20v-5h4v5"/></svg>
-                </div>
-                <h3>Property Management</h3>
-                <p>Professional supervision of your property, maintenance coordination, tenant communication, inspections and trusted local support.</p>
-                <a href="#contact" class="service-link" data-service="Property Management">Enquire now <span aria-hidden="true">→</span></a>
-            </article>
+            <li class="service">
+                <h3>Relocation</h3>
+                <p class="service-desc">Settle into Berlin comfortably, without fighting the bureaucracy alone.</p>
+                <ul class="service-tags">
+                    <li>Apartment search</li>
+                    <li>Registration &amp; paperwork</li>
+                    <li>Moving logistics</li>
+                    <li>Local orientation</li>
+                </ul>
+                <a href="#contact" class="service-cta" data-service="Relocation Assistance">Enquire</a>
+            </li>
 
-            <article class="service-card">
-                <div class="service-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>
-                </div>
-                <h3>Relocation Assistance</h3>
-                <p>Helping individuals and families settle comfortably in Berlin – coordinating administrative processes, transportation, housing and local services.</p>
-                <a href="#contact" class="service-link" data-service="Relocation Assistance">Enquire now <span aria-hidden="true">→</span></a>
-            </article>
+            <li class="service">
+                <h3>Concierge</h3>
+                <p class="service-desc">Day-to-day coordination, handled quickly and quietly.</p>
+                <ul class="service-tags">
+                    <li>Reservations</li>
+                    <li>Appointments</li>
+                    <li>Personal shopping</li>
+                    <li>Travel &amp; events</li>
+                </ul>
+                <a href="#contact" class="service-cta" data-service="Concierge Services">Enquire</a>
+            </li>
 
-            <article class="service-card">
-                <div class="service-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg>
-                </div>
-                <h3>Lifestyle Management</h3>
-                <p>Ongoing personal assistance designed to simplify your daily life while giving you more time for what matters most.</p>
-                <a href="#contact" class="service-link" data-service="Lifestyle Management">Enquire now <span aria-hidden="true">→</span></a>
-            </article>
+            <li class="service">
+                <h3>Lifestyle management</h3>
+                <p class="service-desc">Ongoing personal assistance that gives you back your time, every week.</p>
+                <ul class="service-tags">
+                    <li>Household services</li>
+                    <li>Cleaning</li>
+                    <li>Errands</li>
+                    <li>Ongoing support</li>
+                </ul>
+                <a href="#contact" class="service-cta" data-service="Lifestyle Management">Enquire</a>
+            </li>
 
-        </div>
+        </ol>
 
-        <div class="services-cta">
-            <p>Don't see exactly what you're looking for?</p>
-            <h3>Every request is unique. We are always happy to discuss a bespoke solution.</h3>
-            <a href="#contact" class="btn btn-light">Request Consultation</a>
+        <div class="bespoke">
+            <p>Every request is different. If you don’t see what you need, tell us – we are happy to find a bespoke solution.</p>
+            <a href="#contact" class="btn btn-dark">Describe your request</a>
         </div>
 
     </div>
-
 </section>
 
 <!-- ======================================
-OUR APPROACH
+APPROACH (a real sequence, so it is numbered)
 ======================================= -->
 
-<section class="approach section" id="approach">
-
+<section class="approach" id="approach">
     <div class="container">
 
-        <div class="section-title">
-            <span>Our Approach</span>
-            <h2>Simple, transparent and efficient.</h2>
-            <p>We believe exceptional service comes from understanding our clients first, then delivering solutions with precision.</p>
-        </div>
+        <header class="section-head section-head-light">
+            <h2>How we work</h2>
+            <p>Simple, transparent and personal – from the first conversation onwards.</p>
+        </header>
 
-        <div class="approach-grid">
-
-            <article class="approach-card">
-                <div class="step">01</div>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-num">1</span>
                 <h3>Consultation</h3>
-                <p>We begin with a confidential conversation to understand your needs and expectations.</p>
-            </article>
-
-            <article class="approach-card">
-                <div class="step">02</div>
-                <h3>Planning</h3>
-                <p>We develop a personalised strategy, selecting the best resources and coordinating every detail.</p>
-            </article>
-
-            <article class="approach-card">
-                <div class="step">03</div>
+                <p>A confidential conversation to understand what you need and what you expect.</p>
+            </li>
+            <li class="step">
+                <span class="step-num">2</span>
+                <h3>Plan</h3>
+                <p>We propose a clear plan, choose the right people and agree on every detail with you.</p>
+            </li>
+            <li class="step">
+                <span class="step-num">3</span>
                 <h3>Execution</h3>
-                <p>Every request is managed professionally, efficiently and discreetly.</p>
-            </article>
-
-            <article class="approach-card">
-                <div class="step">04</div>
-                <h3>Ongoing Support</h3>
-                <p>We remain available whenever you need us, building long-term relationships based on trust.</p>
-            </article>
-
-        </div>
+                <p>We manage the work professionally and discreetly, and keep you informed.</p>
+            </li>
+            <li class="step">
+                <span class="step-num">4</span>
+                <h3>Ongoing support</h3>
+                <p>We stay available whenever you need us again, building a long-term relationship.</p>
+            </li>
+        </ol>
 
     </div>
-
 </section>
 
 <!-- ======================================
-CALL TO ACTION
+TEAM
 ======================================= -->
 
-<section class="cta section">
+<section class="team" id="team">
+    <div class="container team-grid">
 
-    <div class="container">
+        <div class="team-copy">
+            <h2>The people you will work with</h2>
+            <p>
+                CRD Berlin is a small, owner-run company. When you contact us, you speak
+                directly to the founders – people who know the city and take personal
+                responsibility for your request.
+            </p>
+            <blockquote>
+                “To simplify your life so you can focus on what truly matters.”
+            </blockquote>
+        </div>
 
-        <div class="cta-content">
-            <span>Let's work together</span>
-            <h2>Your time is valuable. Let us take care of the rest.</h2>
-            <p>Whether you require ongoing concierge services, property management or a one-time request, CRD Berlin is ready to assist you with professionalism and complete discretion.</p>
-            <a href="#contact" class="btn btn-light">Schedule a Consultation</a>
+        <div class="team-people">
+            <figure class="person">
+                <picture>
+                    <source srcset="assets/images/co-founder.webp" type="image/webp">
+                    <img src="assets/images/co-founder.jpg" alt="Carlos, founder of CRD Berlin" loading="lazy" decoding="async" width="993" height="1400">
+                </picture>
+                <figcaption><strong>Carlos</strong> Founder</figcaption>
+            </figure>
+            <figure class="person">
+                <picture>
+                    <source srcset="assets/images/caroline.webp" type="image/webp">
+                    <img src="assets/images/caroline.jpg" alt="Caroline, co-founder of CRD Berlin" loading="lazy" decoding="async" width="865" height="1400">
+                </picture>
+                <figcaption><strong>Caroline</strong> Co-founder</figcaption>
+            </figure>
         </div>
 
     </div>
-
 </section>
 
 <!-- ======================================
 CONTACT
 ======================================= -->
 
-<section class="contact section" id="contact">
+<section class="contact" id="contact">
+    <div class="container contact-grid">
 
-    <div class="container">
+        <div class="contact-copy">
+            <h2>Let’s talk about what you need.</h2>
+            <p>Tell us briefly about your request. We usually reply within a few hours.</p>
 
-        <div class="section-title">
-            <span>Contact</span>
-            <h2>Let's discuss how we can help.</h2>
-            <p>We'd be delighted to hear about your requirements and discuss how CRD Berlin can support you.</p>
+            <dl class="contact-list">
+                <div>
+                    <dt>Email</dt>
+                    <dd><a href="mailto:info@crd-berlin.de">info@crd-berlin.de</a></dd>
+                </div>
+                <div>
+                    <dt>Phone</dt>
+                    <dd><a href="tel:+4915756614358">+49 1575 661 4358</a></dd>
+                </div>
+                <div>
+                    <dt>WhatsApp</dt>
+                    <dd><a class="js-whatsapp" href="https://wa.me/4915756614358" target="_blank" rel="noopener">Send us a message</a></dd>
+                </div>
+                <div>
+                    <dt>Office</dt>
+                    <dd>Rathenower Str. 67, 10559 Berlin</dd>
+                </div>
+            </dl>
         </div>
 
-        <div class="contact-grid">
+        <div class="form-card">
 
-            <!-- CONTACT INFO -->
+            <form class="contact-form" id="contact-form" action="https://formsubmit.co/info@crd-berlin.de" method="POST" novalidate>
 
-            <div class="contact-information">
+                <input type="hidden" name="_subject" value="New enquiry from crd-berlin.de">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://crd-berlin.de/thank-you.html">
 
-                <div class="contact-item">
-                    <h3>Email</h3>
-                    <p><a href="mailto:info@crd-berlin.de">info@crd-berlin.de</a></p>
+                <div class="hp-field" aria-hidden="true">
+                    <label for="cf-honey">Leave this field empty</label>
+                    <input type="text" id="cf-honey" name="_honey" tabindex="-1" autocomplete="off">
                 </div>
 
-                <div class="contact-item">
-                    <h3>Phone / WhatsApp</h3>
-                    <p>
-                        <a href="tel:+4915756614358">+49 1575 661 4358</a><br>
-                        <a class="whatsapp-link js-whatsapp" href="https://wa.me/4915756614358" target="_blank" rel="noopener">Chat on WhatsApp <span aria-hidden="true">→</span></a>
-                    </p>
-                </div>
-
-                <div class="contact-item">
-                    <h3>Location</h3>
-                    <p>Berlin, Germany</p>
-                </div>
-
-                <div class="contact-item">
-                    <h3>Availability</h3>
-                    <p>24/7 – we usually reply within a few hours.</p>
-                </div>
-
-            </div>
-
-            <!-- FORM -->
-
-            <div class="contact-form-container">
-
-                <form class="contact-form"
-                      id="contact-form"
-                      action="https://formsubmit.co/info@crd-berlin.de"
-                      method="POST"
-                      novalidate>
-
-                    <!-- FormSubmit settings -->
-                    <input type="hidden" name="_subject" value="New enquiry from crd-berlin.de">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://crd-berlin.de/thank-you.html">
-
-                    <!-- Spam trap: real visitors never see or fill this -->
-                    <div class="hp-field" aria-hidden="true">
-                        <label for="cf-honey">Leave this field empty</label>
-                        <input type="text" id="cf-honey" name="_honey" tabindex="-1" autocomplete="off">
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="cf-name">Full name <span aria-hidden="true">*</span></label>
-                            <input type="text" id="cf-name" name="name" autocomplete="name" required maxlength="120">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="cf-email">Email address <span aria-hidden="true">*</span></label>
-                            <input type="email" id="cf-email" name="email" autocomplete="email" required maxlength="160">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="cf-phone">Phone <span class="optional">(optional)</span></label>
-                            <input type="tel" id="cf-phone" name="phone" autocomplete="tel" maxlength="40">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="cf-subject">Subject</label>
-                            <input type="text" id="cf-subject" name="subject" maxlength="160">
-                        </div>
-                    </div>
-
+                <div class="form-row">
                     <div class="form-group">
-                        <label for="cf-message">How can we assist you? <span aria-hidden="true">*</span></label>
-                        <textarea id="cf-message" name="message" rows="6" required maxlength="5000"></textarea>
+                        <label for="cf-name">Full name</label>
+                        <input type="text" id="cf-name" name="name" autocomplete="name" required maxlength="120">
                     </div>
-
-                    <div class="form-check">
-                        <input type="checkbox" id="cf-privacy" name="privacy_consent" value="yes" required>
-                        <label for="cf-privacy">
-                            I agree that my details will be used to answer my enquiry.
-                            More in our <a href="privacy.html">Privacy Policy</a>. <span aria-hidden="true">*</span>
-                        </label>
+                    <div class="form-group">
+                        <label for="cf-email">Email</label>
+                        <input type="email" id="cf-email" name="email" autocomplete="email" required maxlength="160">
                     </div>
+                </div>
 
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary">
-                            <span class="btn-label">Send Message</span>
-                        </button>
-                        <p class="form-note">* Required fields</p>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cf-phone">Phone <span class="optional">optional</span></label>
+                        <input type="tel" id="cf-phone" name="phone" autocomplete="tel" maxlength="40">
                     </div>
+                    <div class="form-group">
+                        <label for="cf-subject">Subject <span class="optional">optional</span></label>
+                        <input type="text" id="cf-subject" name="subject" maxlength="160">
+                    </div>
+                </div>
 
-                    <div class="form-status" role="status" aria-live="polite" hidden></div>
+                <div class="form-group">
+                    <label for="cf-message">How can we help?</label>
+                    <textarea id="cf-message" name="message" rows="5" required maxlength="5000"></textarea>
+                </div>
 
-                </form>
+                <div class="form-check">
+                    <input type="checkbox" id="cf-privacy" name="privacy_consent" value="yes" required>
+                    <label for="cf-privacy">
+                        I agree that my details are used to answer my enquiry, as described in the
+                        <a href="privacy.html">privacy policy</a>.
+                    </label>
+                </div>
 
-            </div>
+                <button type="submit" class="btn btn-brass btn-block">
+                    <span class="btn-label">Send message</span>
+                </button>
+
+                <div class="form-status" role="status" aria-live="polite" hidden></div>
+
+            </form>
 
         </div>
 
     </div>
-
 </section>
 
 </main>
@@ -483,75 +420,40 @@ FOOTER
 ======================================= -->
 
 <footer class="footer">
-
     <div class="container">
 
-        <div class="footer-grid">
-
-            <div class="footer-column">
-                <img src="assets/images/logo-light.webp"
-                     alt="CRD Berlin"
-                     class="footer-logo"
-                     width="379" height="160"
-                     loading="lazy">
-                <p>Premium Concierge &amp; Lifestyle Management in Berlin.</p>
-            </div>
-
-            <div class="footer-column">
-                <h3>Navigation</h3>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#team">Our Team</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#approach">Approach</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h3>Services</h3>
-                <ul>
-                    <li><a href="#services">Concierge Services</a></li>
-                    <li><a href="#services">Property Management</a></li>
-                    <li><a href="#services">Lifestyle Management</a></li>
-                    <li><a href="#services">Relocation Assistance</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h3>Contact</h3>
-                <p>Berlin, Germany</p>
-                <p><a href="mailto:info@crd-berlin.de">info@crd-berlin.de</a></p>
-                <p><a href="tel:+4915756614358">+49 1575 661 4358</a></p>
-            </div>
-
+        <div class="footer-top">
+            <img src="assets/images/logo-light.webp" alt="CRD Berlin" class="footer-logo" width="379" height="160" loading="lazy">
+            <p class="footer-claim">Concierge, property management and relocation in Berlin.</p>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="#services">Services</a>
+                <a href="#approach">How we work</a>
+                <a href="#team">About us</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
 
         <div class="footer-bottom">
-            <p>© <span id="year">2026</span> CRD Berlin. All rights reserved.</p>
+            <p>© <span id="year">2026</span> CRD Berlin – Carlos Richter Dienstleistungen</p>
             <ul class="footer-legal">
                 <li><a href="impressum.html">Impressum</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="privacy.html">Privacy policy</a></li>
                 <li><button type="button" class="link-button js-cookie-settings">Cookie settings</button></li>
             </ul>
         </div>
 
     </div>
-
 </footer>
 
 <!-- ======================================
 FLOATING BUTTONS
 ======================================= -->
 
-<a href="#home" class="back-to-top" aria-label="Back to top">↑</a>
+<a href="#home" class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>
+</a>
 
-<a href="https://wa.me/4915756614358"
-   class="whatsapp-button js-whatsapp"
-   target="_blank"
-   rel="noopener"
-   aria-label="Chat with us on WhatsApp">
+<a href="https://wa.me/4915756614358" class="whatsapp-button js-whatsapp" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
     <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
         <path fill="#fff" d="M16.04 3C8.86 3 3.03 8.82 3.03 16c0 2.3.6 4.53 1.74 6.5L3 29l6.68-1.75A12.95 12.95 0 0 0 16.04 29C23.2 29 29 23.18 29 16S23.2 3 16.04 3zm0 23.8c-2 0-3.95-.54-5.65-1.55l-.4-.24-3.96 1.04 1.06-3.86-.26-.4A10.76 10.76 0 0 1 5.2 16c0-5.97 4.86-10.83 10.84-10.83 5.97 0 10.8 4.86 10.8 10.83 0 5.98-4.84 10.8-10.8 10.8zm5.94-8.1c-.33-.16-1.93-.95-2.23-1.06-.3-.11-.52-.16-.73.17-.22.32-.84 1.05-1.03 1.27-.19.22-.38.24-.7.08-.33-.16-1.38-.51-2.62-1.62-.97-.86-1.62-1.93-1.81-2.25-.19-.33-.02-.5.14-.66.15-.15.33-.38.49-.57.16-.19.22-.33.33-.54.1-.22.05-.41-.03-.57-.08-.16-.73-1.77-1-2.42-.27-.64-.54-.55-.73-.56h-.63c-.22 0-.57.08-.87.41-.3.32-1.14 1.11-1.14 2.72 0 1.6 1.17 3.15 1.33 3.37.16.21 2.3 3.5 5.56 4.91.78.34 1.38.54 1.86.69.78.25 1.49.21 2.05.13.63-.09 1.93-.79 2.2-1.55.27-.76.27-1.42.19-1.55-.08-.14-.3-.22-.62-.38z"/>
     </svg>
@@ -562,10 +464,7 @@ COOKIE BANNER
 ======================================= -->
 
 <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice" hidden>
-    <p>
-        We only use essential storage to make this site work – no tracking.
-        <a href="privacy.html">Learn more</a>
-    </p>
+    <p>We only use essential storage to make this site work – no tracking. <a href="privacy.html">Learn more</a></p>
     <div class="cookie-actions">
         <button type="button" class="cookie-btn cookie-btn-ghost" data-consent="essential">Essential only</button>
         <button type="button" class="cookie-btn" data-consent="all">Accept</button>
