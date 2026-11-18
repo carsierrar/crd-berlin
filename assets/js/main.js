@@ -45,7 +45,7 @@
             var y = window.scrollY || window.pageYOffset;
 
             if (header) {
-                var scrolled = y > 80 || document.body.classList.contains("menu-open");
+                var scrolled = y > 40;
                 header.classList.toggle("scrolled", scrolled);
                 if (logo) {
                     var wanted = scrolled ? logoDark : logoLight;
@@ -131,29 +131,14 @@
         }
 
         /* ==========================================
-           REVEAL ON SCROLL
+           HERO ENTRANCE (one orchestrated moment)
         ========================================== */
 
-        var revealElements = document.querySelectorAll(
-            ".service-card, .approach-card, .contact-item, .section-title, .about-content, .about-note, .team-card, .cta-content"
-        );
-        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-        if ("IntersectionObserver" in window && !reduceMotion) {
-            var revealObserver = new IntersectionObserver(function (entries, observer) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("active");
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { rootMargin: "0px 0px -10% 0px" });
-
-            revealElements.forEach(function (el) {
-                el.classList.add("reveal");
-                revealObserver.observe(el);
+        requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+                document.documentElement.classList.add("is-loaded");
             });
-        }
+        });
 
         /* ==========================================
            FOOTER YEAR
