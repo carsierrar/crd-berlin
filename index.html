@@ -39,6 +39,18 @@
     <link rel="preload" href="assets/fonts/inter-600.woff" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="assets/images/hero.webp" as="image" type="image/webp">
 
+    <script>
+        try {
+            var l = new URLSearchParams(location.search).get("lang") || localStorage.getItem("crd-lang") ||
+                    ((navigator.language || "en").slice(0, 2));
+            if (l === "de" || l === "es") {
+                document.documentElement.setAttribute("data-lang-pending", l);
+                setTimeout(function () { document.documentElement.removeAttribute("data-lang-pending"); }, 1500);
+            }
+        } catch (e) {}
+    </script>
+    <style>html[data-lang-pending] body{visibility:hidden}</style>
+
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 
@@ -76,7 +88,7 @@
 
 <body>
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
 
 <!-- ======================================
 HEADER
@@ -95,16 +107,22 @@ HEADER
 
         <nav class="navigation" id="main-navigation" aria-label="Main navigation">
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#team">Our Team</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#approach">Approach</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" data-i18n="nav.home">Home</a></li>
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#team" data-i18n="nav.team">Our Team</a></li>
+                <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                <li><a href="#approach" data-i18n="nav.approach">Approach</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
         </nav>
 
-        <a href="#contact" class="header-button">Request Consultation</a>
+        <div class="lang-switch" role="group" aria-label="Language / Sprache / Idioma">
+            <button type="button" data-lang="de" lang="de" aria-label="Deutsch">DE</button>
+            <button type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="true">EN</button>
+            <button type="button" data-lang="es" lang="es" aria-label="Español">ES</button>
+        </div>
+
+        <a href="#contact" class="header-button" data-i18n="cta.request">Request Consultation</a>
 
         <button class="mobile-toggle"
                 type="button"
@@ -134,14 +152,14 @@ HERO
 
         <div class="hero-content">
 
-            <span class="hero-label">Property Management · Concierge · Relocation</span>
+            <span class="hero-label" data-i18n="hero.label">Property Management · Concierge · Relocation</span>
 
-            <h1>
+            <h1 data-i18n="hero.title">
                 Whatever you need.
                 <span>We'll take care of it.</span>
             </h1>
 
-            <p>
+            <p data-i18n="hero.text">
                 We help private clients, international professionals and businesses
                 save time through premium concierge, property management and lifestyle
                 services – delivered with discretion, reliability and exceptional
@@ -149,8 +167,8 @@ HERO
             </p>
 
             <div class="hero-buttons">
-                <a href="#contact" class="btn btn-light">Book a Consultation</a>
-                <a href="#services" class="btn btn-secondary">Explore Services</a>
+                <a href="#contact" class="btn btn-light" data-i18n="hero.btn1">Book a Consultation</a>
+                <a href="#services" class="btn btn-secondary" data-i18n="hero.btn2">Explore Services</a>
             </div>
 
         </div>
@@ -170,18 +188,18 @@ ABOUT
 <section class="about section" id="about">
     <div class="container">
         <div class="section-title">
-            <span>About CRD Berlin</span>
-            <h2>Trusted local expertise with international standards.</h2>
+            <span data-i18n="about.label">About CRD Berlin</span>
+            <h2 data-i18n="about.title">Trusted local expertise with international standards.</h2>
         </div>
         <div class="about-grid">
             <div class="about-content">
-                <h3>Personal assistance designed around your lifestyle.</h3>
-                <p>At CRD Berlin we believe that exceptional service begins with trust. Every request is handled with complete discretion, professionalism and attention to detail.</p>
-                <p>Whether you need property management, relocation assistance, reservations, administrative support or simply someone you can rely on locally, our goal is always the same.</p>
+                <h3 data-i18n="about.subtitle">Personal assistance designed around your lifestyle.</h3>
+                <p data-i18n="about.p1">At CRD Berlin we believe that exceptional service begins with trust. Every request is handled with complete discretion, professionalism and attention to detail.</p>
+                <p data-i18n="about.p2">Whether you need property management, relocation assistance, reservations, administrative support or simply someone you can rely on locally, our goal is always the same.</p>
             </div>
             <aside class="about-note">
-                <span>Our promise</span>
-                <p>“To simplify your life so you can focus on what truly matters.”</p>
+                <span data-i18n="about.promise">Our promise</span>
+                <p data-i18n="about.quote">“To simplify your life so you can focus on what truly matters.”</p>
                 <small>CRD Berlin</small>
             </aside>
         </div>
@@ -195,9 +213,9 @@ TEAM
 <section class="team section" id="team">
     <div class="container">
         <div class="section-title">
-            <span>Our Team</span>
-            <h2>A personal service, delivered by real people.</h2>
-            <p>Get to know the people behind CRD Berlin. We offer attentive local support built on trust, discretion and a genuine understanding of what makes life in Berlin easier.</p>
+            <span data-i18n="nav.team">Our Team</span>
+            <h2 data-i18n="team.title">A personal service, delivered by real people.</h2>
+            <p data-i18n="team.text">Get to know the people behind CRD Berlin. We offer attentive local support built on trust, discretion and a genuine understanding of what makes life in Berlin easier.</p>
         </div>
         <div class="team-grid">
             <article class="team-card">
@@ -207,7 +225,7 @@ TEAM
                 </picture>
                 <div class="team-card-copy">
                     <h3>Caroline</h3>
-                    <p>Co-Founder · Local support with a personal touch</p>
+                    <p data-i18n="team.caroline">Co-Founder · Local support with a personal touch</p>
                 </div>
             </article>
             <article class="team-card">
@@ -217,7 +235,7 @@ TEAM
                 </picture>
                 <div class="team-card-copy">
                     <h3>Carlos</h3>
-                    <p>Founder</p>
+                    <p data-i18n="team.carlos">Founder</p>
                 </div>
             </article>
         </div>
@@ -233,9 +251,9 @@ SERVICES
     <div class="container">
 
         <div class="section-title">
-            <span>Our Services</span>
-            <h2>Tailored solutions for your life in Berlin.</h2>
-            <p>Every service is designed to remove complexity, save valuable time and provide complete peace of mind.</p>
+            <span data-i18n="services.label">Our Services</span>
+            <h2 data-i18n="services.title">Tailored solutions for your life in Berlin.</h2>
+            <p data-i18n="services.text">Every service is designed to remove complexity, save valuable time and provide complete peace of mind.</p>
         </div>
 
         <div class="services-grid">
@@ -244,44 +262,44 @@ SERVICES
                 <div class="service-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><path d="M3 18h18M5 18a7 7 0 0 1 14 0M12 8V6m-2 0h4"/></svg>
                 </div>
-                <h3>Concierge Services</h3>
-                <p>Restaurant reservations, event planning, personal shopping, appointments, travel assistance and day-to-day coordination.</p>
-                <a href="#contact" class="service-link" data-service="Concierge Services">Enquire now <span aria-hidden="true">→</span></a>
+                <h3 data-i18n="s1.title">Concierge Services</h3>
+                <p data-i18n="s1.text">Restaurant reservations, event planning, personal shopping, appointments, travel assistance and day-to-day coordination.</p>
+                <a href="#contact" class="service-link" data-service="Concierge Services" data-i18n="services.link">Enquire now <span aria-hidden="true">→</span></a>
             </article>
 
             <article class="service-card">
                 <div class="service-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5M5.5 9.5V20h13V9.5M10 20v-5h4v5"/></svg>
                 </div>
-                <h3>Property Management</h3>
-                <p>Professional supervision of your property, maintenance coordination, tenant communication, inspections and trusted local support.</p>
-                <a href="#contact" class="service-link" data-service="Property Management">Enquire now <span aria-hidden="true">→</span></a>
+                <h3 data-i18n="s2.title">Property Management</h3>
+                <p data-i18n="s2.text">Professional supervision of your property, maintenance coordination, tenant communication, inspections and trusted local support.</p>
+                <a href="#contact" class="service-link" data-service="Property Management" data-i18n="services.link">Enquire now <span aria-hidden="true">→</span></a>
             </article>
 
             <article class="service-card">
                 <div class="service-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>
                 </div>
-                <h3>Relocation Assistance</h3>
-                <p>Helping individuals and families settle comfortably in Berlin – coordinating administrative processes, transportation, housing and local services.</p>
-                <a href="#contact" class="service-link" data-service="Relocation Assistance">Enquire now <span aria-hidden="true">→</span></a>
+                <h3 data-i18n="s3.title">Relocation Assistance</h3>
+                <p data-i18n="s3.text">Helping individuals and families settle comfortably in Berlin – coordinating administrative processes, transportation, housing and local services.</p>
+                <a href="#contact" class="service-link" data-service="Relocation Assistance" data-i18n="services.link">Enquire now <span aria-hidden="true">→</span></a>
             </article>
 
             <article class="service-card">
                 <div class="service-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg>
                 </div>
-                <h3>Lifestyle Management</h3>
-                <p>Ongoing personal assistance designed to simplify your daily life while giving you more time for what matters most.</p>
-                <a href="#contact" class="service-link" data-service="Lifestyle Management">Enquire now <span aria-hidden="true">→</span></a>
+                <h3 data-i18n="s4.title">Lifestyle Management</h3>
+                <p data-i18n="s4.text">Ongoing personal assistance designed to simplify your daily life while giving you more time for what matters most.</p>
+                <a href="#contact" class="service-link" data-service="Lifestyle Management" data-i18n="services.link">Enquire now <span aria-hidden="true">→</span></a>
             </article>
 
         </div>
 
         <div class="services-cta">
-            <p>Don't see exactly what you're looking for?</p>
-            <h3>Every request is unique. We are always happy to discuss a bespoke solution.</h3>
-            <a href="#contact" class="btn btn-light">Request Consultation</a>
+            <p data-i18n="services.ctaq">Don't see exactly what you're looking for?</p>
+            <h3 data-i18n="services.ctah">Every request is unique. We are always happy to discuss a bespoke solution.</h3>
+            <a href="#contact" class="btn btn-light" data-i18n="cta.request">Request Consultation</a>
         </div>
 
     </div>
@@ -297,35 +315,35 @@ OUR APPROACH
     <div class="container">
 
         <div class="section-title">
-            <span>Our Approach</span>
-            <h2>Simple, transparent and efficient.</h2>
-            <p>We believe exceptional service comes from understanding our clients first, then delivering solutions with precision.</p>
+            <span data-i18n="approach.label">Our Approach</span>
+            <h2 data-i18n="approach.title">Simple, transparent and efficient.</h2>
+            <p data-i18n="approach.text">We believe exceptional service comes from understanding our clients first, then delivering solutions with precision.</p>
         </div>
 
         <div class="approach-grid">
 
             <article class="approach-card">
                 <div class="step">01</div>
-                <h3>Consultation</h3>
-                <p>We begin with a confidential conversation to understand your needs and expectations.</p>
+                <h3 data-i18n="step1.title">Consultation</h3>
+                <p data-i18n="step1.text">We begin with a confidential conversation to understand your needs and expectations.</p>
             </article>
 
             <article class="approach-card">
                 <div class="step">02</div>
-                <h3>Planning</h3>
-                <p>We develop a personalised strategy, selecting the best resources and coordinating every detail.</p>
+                <h3 data-i18n="step2.title">Planning</h3>
+                <p data-i18n="step2.text">We develop a personalised strategy, selecting the best resources and coordinating every detail.</p>
             </article>
 
             <article class="approach-card">
                 <div class="step">03</div>
-                <h3>Execution</h3>
-                <p>Every request is managed professionally, efficiently and discreetly.</p>
+                <h3 data-i18n="step3.title">Execution</h3>
+                <p data-i18n="step3.text">Every request is managed professionally, efficiently and discreetly.</p>
             </article>
 
             <article class="approach-card">
                 <div class="step">04</div>
-                <h3>Ongoing Support</h3>
-                <p>We remain available whenever you need us, building long-term relationships based on trust.</p>
+                <h3 data-i18n="step4.title">Ongoing Support</h3>
+                <p data-i18n="step4.text">We remain available whenever you need us, building long-term relationships based on trust.</p>
             </article>
 
         </div>
@@ -343,10 +361,10 @@ CALL TO ACTION
     <div class="container">
 
         <div class="cta-content">
-            <span>Let's work together</span>
-            <h2>Your time is valuable. Let us take care of the rest.</h2>
-            <p>Whether you require ongoing concierge services, property management or a one-time request, CRD Berlin is ready to assist you with professionalism and complete discretion.</p>
-            <a href="#contact" class="btn btn-light">Schedule a Consultation</a>
+            <span data-i18n="cta.label">Let's work together</span>
+            <h2 data-i18n="cta.title">Your time is valuable. Let us take care of the rest.</h2>
+            <p data-i18n="cta.text">Whether you require ongoing concierge services, property management or a one-time request, CRD Berlin is ready to assist you with professionalism and complete discretion.</p>
+            <a href="#contact" class="btn btn-light" data-i18n="cta.btn">Schedule a Consultation</a>
         </div>
 
     </div>
@@ -362,9 +380,9 @@ CONTACT
     <div class="container">
 
         <div class="section-title">
-            <span>Contact</span>
-            <h2>Let's discuss how we can help.</h2>
-            <p>We'd be delighted to hear about your requirements and discuss how CRD Berlin can support you.</p>
+            <span data-i18n="nav.contact">Contact</span>
+            <h2 data-i18n="contact.title">Let's discuss how we can help.</h2>
+            <p data-i18n="contact.text">We'd be delighted to hear about your requirements and discuss how CRD Berlin can support you.</p>
         </div>
 
         <div class="contact-grid">
@@ -374,26 +392,26 @@ CONTACT
             <div class="contact-information">
 
                 <div class="contact-item">
-                    <h3>Email</h3>
+                    <h3 data-i18n="contact.email">Email</h3>
                     <p><a href="mailto:info@crd-berlin.de">info@crd-berlin.de</a></p>
                 </div>
 
                 <div class="contact-item">
-                    <h3>Phone / WhatsApp</h3>
+                    <h3 data-i18n="contact.phone">Phone / WhatsApp</h3>
                     <p>
                         <a href="tel:+4915756614358">+49 1575 661 4358</a><br>
-                        <a class="whatsapp-link js-whatsapp" href="https://wa.me/4915756614358" target="_blank" rel="noopener">Chat on WhatsApp <span aria-hidden="true">→</span></a>
+                        <a class="whatsapp-link js-whatsapp" href="https://wa.me/4915756614358" target="_blank" rel="noopener" data-i18n="contact.wa">Chat on WhatsApp <span aria-hidden="true">→</span></a>
                     </p>
                 </div>
 
                 <div class="contact-item">
-                    <h3>Location</h3>
-                    <p>Berlin, Germany</p>
+                    <h3 data-i18n="contact.location">Location</h3>
+                    <p data-i18n="contact.city">Berlin, Germany</p>
                 </div>
 
                 <div class="contact-item">
-                    <h3>Availability</h3>
-                    <p>24/7 – we usually reply within a few hours.</p>
+                    <h3 data-i18n="contact.availability">Availability</h3>
+                    <p data-i18n="contact.reply">24/7 – we usually reply within a few hours.</p>
                 </div>
 
             </div>
@@ -422,46 +440,46 @@ CONTACT
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="cf-name">Full name <span aria-hidden="true">*</span></label>
+                            <label for="cf-name" data-i18n="form.name">Full name <span aria-hidden="true">*</span></label>
                             <input type="text" id="cf-name" name="name" autocomplete="name" required maxlength="120">
                         </div>
 
                         <div class="form-group">
-                            <label for="cf-email">Email address <span aria-hidden="true">*</span></label>
+                            <label for="cf-email" data-i18n="form.email">Email address <span aria-hidden="true">*</span></label>
                             <input type="email" id="cf-email" name="email" autocomplete="email" required maxlength="160">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="cf-phone">Phone <span class="optional">(optional)</span></label>
+                            <label for="cf-phone" data-i18n="form.phone">Phone <span class="optional">(optional)</span></label>
                             <input type="tel" id="cf-phone" name="phone" autocomplete="tel" maxlength="40">
                         </div>
 
                         <div class="form-group">
-                            <label for="cf-subject">Subject</label>
+                            <label for="cf-subject" data-i18n="form.subject">Subject</label>
                             <input type="text" id="cf-subject" name="subject" maxlength="160">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="cf-message">How can we assist you? <span aria-hidden="true">*</span></label>
+                        <label for="cf-message" data-i18n="form.message">How can we assist you? <span aria-hidden="true">*</span></label>
                         <textarea id="cf-message" name="message" rows="6" required maxlength="5000"></textarea>
                     </div>
 
                     <div class="form-check">
                         <input type="checkbox" id="cf-privacy" name="privacy_consent" value="yes" required>
-                        <label for="cf-privacy">
+                        <label for="cf-privacy" data-i18n="form.privacy">
                             I agree that my details will be used to answer my enquiry.
-                            More in our <a href="privacy.html">Privacy Policy</a>. <span aria-hidden="true">*</span>
+                            More in our <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>. <span aria-hidden="true">*</span>
                         </label>
                     </div>
 
                     <div class="form-actions">
                         <button type="submit" class="btn btn-primary">
-                            <span class="btn-label">Send Message</span>
+                            <span class="btn-label" data-i18n="form.send">Send Message</span>
                         </button>
-                        <p class="form-note">* Required fields</p>
+                        <p class="form-note" data-i18n="form.required">* Required fields</p>
                     </div>
 
                     <div class="form-status" role="status" aria-live="polite" hidden></div>
@@ -494,34 +512,34 @@ FOOTER
                      class="footer-logo"
                      width="379" height="160"
                      loading="lazy">
-                <p>Premium Concierge &amp; Lifestyle Management in Berlin.</p>
+                <p data-i18n="footer.claim">Premium Concierge &amp; Lifestyle Management in Berlin.</p>
             </div>
 
             <div class="footer-column">
-                <h3>Navigation</h3>
+                <h3 data-i18n="footer.nav">Navigation</h3>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#team">Our Team</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#approach">Approach</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home" data-i18n="nav.home">Home</a></li>
+                    <li><a href="#about" data-i18n="nav.about">About</a></li>
+                    <li><a href="#team" data-i18n="nav.team">Our Team</a></li>
+                    <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                    <li><a href="#approach" data-i18n="nav.approach">Approach</a></li>
+                    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
                 </ul>
             </div>
 
             <div class="footer-column">
-                <h3>Services</h3>
+                <h3 data-i18n="nav.services">Services</h3>
                 <ul>
-                    <li><a href="#services">Concierge Services</a></li>
-                    <li><a href="#services">Property Management</a></li>
-                    <li><a href="#services">Lifestyle Management</a></li>
-                    <li><a href="#services">Relocation Assistance</a></li>
+                    <li><a href="#services" data-i18n="s1.title">Concierge Services</a></li>
+                    <li><a href="#services" data-i18n="s2.title">Property Management</a></li>
+                    <li><a href="#services" data-i18n="s4.title">Lifestyle Management</a></li>
+                    <li><a href="#services" data-i18n="s3.title">Relocation Assistance</a></li>
                 </ul>
             </div>
 
             <div class="footer-column">
-                <h3>Contact</h3>
-                <p>Berlin, Germany</p>
+                <h3 data-i18n="nav.contact">Contact</h3>
+                <p data-i18n="contact.city">Berlin, Germany</p>
                 <p><a href="mailto:info@crd-berlin.de">info@crd-berlin.de</a></p>
                 <p><a href="tel:+4915756614358">+49 1575 661 4358</a></p>
             </div>
@@ -529,11 +547,11 @@ FOOTER
         </div>
 
         <div class="footer-bottom">
-            <p>© <span id="year">2026</span> CRD Berlin. All rights reserved.</p>
+            <p>© <span id="year">2026</span> CRD Berlin. <span data-i18n="footer.rights">All rights reserved.</span></p>
             <ul class="footer-legal">
                 <li><a href="impressum.html">Impressum</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><button type="button" class="link-button js-cookie-settings">Cookie settings</button></li>
+                <li><a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a></li>
+                <li><button type="button" class="link-button js-cookie-settings" data-i18n="footer.cookies">Cookie settings</button></li>
             </ul>
         </div>
 
@@ -562,16 +580,17 @@ COOKIE BANNER
 ======================================= -->
 
 <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie notice" hidden>
-    <p>
+    <p data-i18n="cookie.text">
         We only use essential storage to make this site work – no tracking.
         <a href="privacy.html">Learn more</a>
     </p>
     <div class="cookie-actions">
-        <button type="button" class="cookie-btn cookie-btn-ghost" data-consent="essential">Essential only</button>
-        <button type="button" class="cookie-btn" data-consent="all">Accept</button>
+        <button type="button" class="cookie-btn cookie-btn-ghost" data-consent="essential" data-i18n="cookie.essential">Essential only</button>
+        <button type="button" class="cookie-btn" data-consent="all" data-i18n="cookie.accept">Accept</button>
     </div>
 </div>
 
+<script src="assets/js/i18n.js" defer></script>
 <script src="assets/js/main.js" defer></script>
 
 </body>
