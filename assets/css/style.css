@@ -260,7 +260,7 @@ textarea{
     background-color:#0d1420;
     background-image:url("../images/hero.jpg");
     background-image:image-set(url("../images/hero.webp") type("image/webp"), url("../images/hero.jpg") type("image/jpeg"));
-    background-position:center;
+    background-position:center 40%;
     background-size:cover;
     background-repeat:no-repeat;
     color:#fff;
@@ -269,7 +269,7 @@ textarea{
 .hero-overlay{
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,.45);
+    background:linear-gradient(90deg, rgba(8,12,20,.82) 0%, rgba(8,12,20,.62) 45%, rgba(8,12,20,.3) 100%);
 }
 
 .hero-container{
