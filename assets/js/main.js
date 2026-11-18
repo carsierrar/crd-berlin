@@ -37,7 +37,7 @@
            HEADER + BACK TO TOP (one throttled scroll handler)
         ========================================== */
 
-        var logoLight = "assets/images/logo-light.webp";
+        var logoLight = "assets/images/logo-dark.webp";
         var logoDark = "assets/images/logo-dark.webp";
         var ticking = false;
 
