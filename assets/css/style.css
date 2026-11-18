@@ -202,6 +202,7 @@ textarea{
 
 .navigation a{
     position:relative;
+    white-space:nowrap;
     font-weight:500;
     color:#fff;
     transition:var(--transition);
@@ -1298,4 +1299,66 @@ body.cookie-open .back-to-top{
 .thank-you p{
     color:var(--secondary);
     margin-bottom:36px;
+}
+
+/* ===========================
+   LANGUAGE SWITCH
+=========================== */
+
+.lang-switch{
+    display:flex;
+    gap:2px;
+    padding:3px;
+    margin-left:auto;
+    margin-right:18px;
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:100px;
+}
+.navigation + .lang-switch{
+    margin-left:32px;
+}
+.lang-switch button{
+    min-width:38px;
+    padding:7px 9px;
+    border:none;
+    border-radius:100px;
+    background:transparent;
+    color:rgba(255,255,255,.8);
+    font:inherit;
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.04em;
+    cursor:pointer;
+    transition:var(--transition);
+}
+.lang-switch button:hover{
+    color:#fff;
+}
+.lang-switch button[aria-pressed="true"]{
+    background:#fff;
+    color:#111;
+}
+.header.scrolled .lang-switch{
+    border-color:rgba(0,0,0,.15);
+}
+.header.scrolled .lang-switch button{
+    color:#555;
+}
+.header.scrolled .lang-switch button:hover{
+    color:#111;
+}
+.header.scrolled .lang-switch button[aria-pressed="true"]{
+    background:#111;
+    color:#fff;
+}
+.navigation{
+    margin-left:32px;
+}
+.header-button{
+    white-space:nowrap;
+}
+@media (max-width:1500px){
+    .navigation ul{
+        gap:28px;
+    }
 }

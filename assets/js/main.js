@@ -24,7 +24,83 @@
         }
     };
 
+    /* ------------------------------------------
+       LANGUAGES (EN / DE / ES)
+       English is the text in the HTML; DE and ES come from i18n.js.
+    ------------------------------------------ */
+
+    var LANG_KEY = "crd-lang";
+    var LANGS = ["en", "de", "es"];
+    var dict = window.CRD_I18N || { en: {}, de: {}, es: {} };
+    var currentLang = "en";
+    var englishHtml = {};
+
+    function t(key) {
+        var d = dict[currentLang] || {};
+        if (d[key] !== undefined) { return d[key]; }
+        if (dict.en && dict.en[key] !== undefined) { return dict.en[key]; }
+        return englishHtml[key] || "";
+    }
+
+    function detectLang() {
+        var fromUrl = null;
+        try { fromUrl = new URLSearchParams(window.location.search).get("lang"); } catch (e) { /* ignore */ }
+        var candidates = [fromUrl, storage.get(LANG_KEY), (navigator.language || "en").slice(0, 2)];
+        for (var i = 0; i < candidates.length; i++) {
+            if (candidates[i] && LANGS.indexOf(candidates[i]) !== -1) { return candidates[i]; }
+        }
+        return "en";
+    }
+
+    function applyLang(lang) {
+        currentLang = LANGS.indexOf(lang) !== -1 ? lang : "en";
+
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+            var key = el.getAttribute("data-i18n");
+            var html = currentLang === "en" ? englishHtml[key] : (dict[currentLang] || {})[key];
+            if (html !== undefined && el.innerHTML !== html) { el.innerHTML = html; }
+        });
+
+        document.documentElement.setAttribute("lang", currentLang);
+        document.title = t("meta.title");
+        var meta = document.querySelector('meta[name="description"]');
+        if (meta) { meta.setAttribute("content", t("meta.description")); }
+
+        document.querySelectorAll(".lang-switch [data-lang]").forEach(function (btn) {
+            btn.setAttribute("aria-pressed", btn.getAttribute("data-lang") === currentLang ? "true" : "false");
+        });
+
+        var waText = encodeURIComponent(t("js.wa"));
+        document.querySelectorAll(".js-whatsapp").forEach(function (link) {
+            link.setAttribute("href", "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + waText);
+        });
+
+        var year = document.getElementById("year");
+        if (year) { year.textContent = new Date().getFullYear(); }
+
+        document.documentElement.removeAttribute("data-lang-pending");
+    }
+
+    function initI18n() {
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+            var key = el.getAttribute("data-i18n");
+            if (englishHtml[key] === undefined) { englishHtml[key] = el.innerHTML.trim().replace(/\s+/g, " "); }
+        });
+
+        applyLang(detectLang());
+
+        document.querySelectorAll(".lang-switch [data-lang]").forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                var lang = btn.getAttribute("data-lang");
+                storage.set(LANG_KEY, lang);
+                applyLang(lang);
+            });
+        });
+    }
+
     document.addEventListener("DOMContentLoaded", function () {
+
+        initI18n();
 
         var header = document.querySelector(".header");
         var logo = document.getElementById("site-logo");
@@ -168,10 +244,6 @@
            format without "+", "00", spaces or dashes.
         ========================================== */
 
-        var waText = encodeURIComponent("Hello CRD Berlin, I would like to know more about your services.");
-        document.querySelectorAll(".js-whatsapp").forEach(function (link) {
-            link.setAttribute("href", "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + waText);
-        });
 
         /* ==========================================
            "ENQUIRE NOW" → PREFILL SUBJECT
@@ -182,7 +254,9 @@
         document.querySelectorAll("[data-service]").forEach(function (link) {
             link.addEventListener("click", function () {
                 if (subjectField) {
-                    subjectField.value = "Enquiry: " + link.getAttribute("data-service");
+                    var card = link.closest(".service-card");
+                    var title = card ? card.querySelector("h3") : null;
+                    subjectField.value = t("js.enquiry") + (title ? title.textContent.trim() : link.getAttribute("data-service"));
                 }
             });
         });
@@ -215,7 +289,7 @@
         var status = form.querySelector(".form-status");
         var button = form.querySelector("button[type='submit']");
         var buttonLabel = button ? button.querySelector(".btn-label") : null;
-        var originalLabel = buttonLabel ? buttonLabel.textContent : "";
+        var originalLabel = "";
 
         function showStatus(type, html) {
             status.className = "form-status form-status-" + type;
@@ -227,7 +301,10 @@
             if (!button) { return; }
             button.disabled = loading;
             button.classList.toggle("is-loading", loading);
-            if (buttonLabel) { buttonLabel.textContent = loading ? "Sending…" : originalLabel; }
+            if (buttonLabel) {
+                if (loading) { originalLabel = buttonLabel.innerHTML; buttonLabel.textContent = t("js.sending"); }
+                else if (originalLabel) { buttonLabel.innerHTML = originalLabel; }
+            }
         }
 
         function markInvalid(field, invalid) {
@@ -273,7 +350,7 @@
 
             var firstInvalid = validate();
             if (firstInvalid) {
-                showStatus("error", "Please fill in all required fields and accept the privacy notice.");
+                showStatus("error", t("js.invalid"));
                 firstInvalid.focus();
                 return;
             }
@@ -281,7 +358,7 @@
             // Spam trap filled → pretend success, send nothing
             if (form.querySelector("[name='_honey']").value) {
                 form.reset();
-                showStatus("success", "Thank you! Your message has been sent.");
+                showStatus("success", t("js.success"));
                 return;
             }
 
@@ -304,7 +381,8 @@
                 _replyto: data.email,
                 _subject: "New enquiry from crd-berlin.de" + (data.subject ? ": " + data.subject : ""),
                 _template: "table",
-                _captcha: "false"
+                _captcha: "false",
+                language: currentLang.toUpperCase()
             };
 
             setLoading(true);
@@ -328,14 +406,12 @@
                 })
                 .then(function () {
                     form.reset();
-                    showStatus("success",
-                        "<strong>Thank you, your message has been sent.</strong> We will get back to you shortly.");
+                    showStatus("success", t("js.success"));
                 })
                 .catch(function () {
-                    showStatus("error",
-                        "Sorry, your message could not be sent right now. Please " +
-                        "<a href=\"" + mailtoFallback(data) + "\">send it by email</a> or " +
-                        "<a href=\"https://wa.me/" + WHATSAPP_NUMBER + "\" target=\"_blank\" rel=\"noopener\">contact us on WhatsApp</a>.");
+                    showStatus("error", t("js.error")
+                        .replace("{mail}", "<a href=\"" + mailtoFallback(data) + "\">").replace("{/mail}", "</a>")
+                        .replace("{wa}", "<a href=\"https://wa.me/" + WHATSAPP_NUMBER + "\" target=\"_blank\" rel=\"noopener\">").replace("{/wa}", "</a>"));
                 })
                 .then(function () {
                     clearTimeout(timeout);
