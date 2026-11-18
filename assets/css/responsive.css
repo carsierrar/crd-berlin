@@ -103,6 +103,9 @@
     .hero{
         text-align:center;
     }
+    .hero-overlay{
+        background:rgba(8,12,20,.62);
+    }
 
     .hero-content{
         margin:auto;
