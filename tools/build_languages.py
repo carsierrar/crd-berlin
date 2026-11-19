@@ -99,7 +99,12 @@ def structured_data(lang, tx):
                 },
                 "areaServed": {"@type": "City", "name": "Berlin"},
                 "knowsLanguage": ["de", "en", "es"],
-                "founder": {"@type": "Person", "name": "Carlos Richter Moreno"},
+                "founder": {
+                    "@type": "Person",
+                    "name": "Carlos Andrés Richter Moreno",
+                    "jobTitle": "Gründer & Inhaber",
+                    "sameAs": ["https://www.linkedin.com/in/carlos-richter-moreno/"],
+                },
                 "openingHoursSpecification": {
                     "@type": "OpeningHoursSpecification",
                     "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
