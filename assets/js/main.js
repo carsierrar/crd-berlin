@@ -11,6 +11,10 @@
     var FORM_ENDPOINT = "https://formsubmit.co/ajax/" + CONTACT_EMAIL;
     var CONSENT_KEY = "crd-cookie-consent";
 
+    // Microsoft Clarity project ID (heatmaps & session recordings).
+    // Clarity is only loaded after the visitor clicks "Accept" in the cookie banner.
+    var CLARITY_ID = "zftob5wvw7";
+
     /* ------------------------------------------
        Safe localStorage (can throw in private mode)
     ------------------------------------------ */
@@ -432,9 +436,15 @@
         var banner = document.getElementById("cookie-banner");
         if (!banner) { return; }
 
-        function apply(value) {
+        function apply(value, previous) {
             window.crdConsent = value;
             document.dispatchEvent(new CustomEvent("crd:consent", { detail: value }));
+            if (value === "all") {
+                loadClarity();
+            } else if (previous === "all" && window.clarity) {
+                // Consent withdrawn: Clarity deletes its cookies and stops recording
+                window.clarity("consent", false);
+            }
         }
 
         function open() {
@@ -460,8 +470,9 @@
         banner.querySelectorAll("[data-consent]").forEach(function (btn) {
             btn.addEventListener("click", function () {
                 var value = btn.getAttribute("data-consent");
+                var previous = storage.get(CONSENT_KEY);
                 storage.set(CONSENT_KEY, value);
-                apply(value);
+                apply(value, previous);
                 close();
             });
         });
@@ -469,6 +480,26 @@
         document.querySelectorAll(".js-cookie-settings").forEach(function (btn) {
             btn.addEventListener("click", open);
         });
+    }
+
+    /* ==========================================================
+       MICROSOFT CLARITY (only after consent)
+    ========================================================== */
+
+    var clarityLoaded = false;
+
+    function loadClarity() {
+        if (clarityLoaded || !CLARITY_ID) { return; }
+        clarityLoaded = true;
+
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", CLARITY_ID);
+
+        // Visitor accepted: analytics allowed, no data sharing with Microsoft Ads
+        window.clarity("consentv2", { ad_Storage: "denied", analytics_Storage: "granted" });
     }
 
 })();
