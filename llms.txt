@@ -1,13 +1,13 @@
 # CRD Berlin
 
-> CRD Berlin (Carlos Richter Dienstleistungen) is a small, owner-run service company in Berlin, Germany. It offers property management, apartment cleaning, concierge services and lifestyle management for private clients, property owners (including owners living abroad), tenants, international professionals and businesses in Berlin. Clients have one personal local contact, reachable 24/7, in German, English or Spanish.
+> CRD Berlin (Carlos Richter Dienstleistungen) is a small, owner-run service company in Berlin, Germany. It offers property management, personal assistant and concierge services for private clients, property owners (including owners living abroad), tenants, international professionals and businesses in Berlin. Clients have one personal local contact, reachable 24/7, in German, English or Spanish.
 
 ## Services
 
-- **Property management (Hausverwaltung):** supervision of apartments, inspections, key handling, coordination of repairs, maintenance and tradespeople, communication with tenants, owners and building management.
-- **Cleaning services (Reinigung):** regular apartment cleaning, deep cleaning, move-in / move-out cleaning, cleaning between tenants; can be combined with key handover and property checks.
-- **Concierge services:** reservations, appointments, event planning, personal shopping, travel assistance, transport coordination and day-to-day organisation.
-- **Lifestyle management:** ongoing personal assistance and household services.
+- **Property management (Hausverwaltung):** supervision of apartments, inspections, key handling, coordination of repairs, maintenance and tradespeople, communication with tenants, owners and building management, service charge statements.
+- **Personal assistant:** appointments, paperwork with German authorities, correspondence, contracts and everyday errands for private clients and international professionals.
+- **Concierge services:** reservations, event planning, personal shopping, travel assistance, transport coordination, key handovers and day-to-day organisation.
+- **Additional service – cleaning:** on request, apartment cleaning (regular, deep cleaning, move-in / move-out, between tenants), combined with key handover and property checks.
 
 ## Key facts
 
