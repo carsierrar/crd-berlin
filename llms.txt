@@ -1,12 +1,11 @@
 # CRD Berlin
 
-> CRD Berlin (Carlos Richter Dienstleistungen) is a small, owner-run service company in Berlin, Germany. It offers property management, apartment cleaning, relocation assistance, concierge services and lifestyle management for private clients, property owners (including owners living abroad), tenants, international professionals and businesses in Berlin. Clients have one personal local contact, reachable 24/7, in German, English or Spanish.
+> CRD Berlin (Carlos Richter Dienstleistungen) is a small, owner-run service company in Berlin, Germany. It offers property management, apartment cleaning, concierge services and lifestyle management for private clients, property owners (including owners living abroad), tenants, international professionals and businesses in Berlin. Clients have one personal local contact, reachable 24/7, in German, English or Spanish.
 
 ## Services
 
 - **Property management (Hausverwaltung):** supervision of apartments, inspections, key handling, coordination of repairs, maintenance and tradespeople, communication with tenants, owners and building management.
 - **Cleaning services (Reinigung):** regular apartment cleaning, deep cleaning, move-in / move-out cleaning, cleaning between tenants; can be combined with key handover and property checks.
-- **Relocation assistance (Umzugs- & Relocation-Service):** apartment search, registration (Anmeldung) and paperwork, transport and moving logistics, finding local services for newcomers to Berlin.
 - **Concierge services:** reservations, appointments, event planning, personal shopping, travel assistance, transport coordination and day-to-day organisation.
 - **Lifestyle management:** ongoing personal assistance and household services.
 

@@ -53,7 +53,7 @@ def structured_data(lang, tx):
     business_id = SITE + "/#business"
 
     services = []
-    for key in ["s2", "s5", "s3", "s1", "s4"]:
+    for key in ["s2", "s5", "s1", "s4"]:
         services.append({
             "@type": "Offer",
             "itemOffered": {
