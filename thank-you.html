@@ -24,11 +24,29 @@
 
 <main class="thank-you">
     <div class="container">
-        <h1>Thank you for your message.</h1>
-        <p>We have received your enquiry and will get back to you shortly. For urgent matters, call or message us on +49 1575 661 4358.</p>
-        <a href="index.html" class="btn btn-primary">Back to website</a>
+        <h1 id="ty-title">Thank you for your message.</h1>
+        <p id="ty-text">We have received your enquiry and will get back to you shortly. For urgent matters, call or message us on +49 1575 661 4358.</p>
+        <a href="index.html" class="btn btn-primary" id="ty-back">Back to website</a>
     </div>
 </main>
+
+<script>
+    (function () {
+        var t = {
+            de: ["Vielen Dank für Ihre Nachricht.", "Wir haben Ihre Anfrage erhalten und melden uns in Kürze. In dringenden Fällen erreichen Sie uns telefonisch oder per WhatsApp unter +49 1575 661 4358.", "Zurück zur Website"],
+            es: ["Gracias por su mensaje.", "Hemos recibido su consulta y le responderemos en breve. Para asuntos urgentes, llámenos o escríbanos por WhatsApp al +49 1575 661 4358.", "Volver a la web"]
+        };
+        var l = null;
+        try { l = localStorage.getItem("crd-lang"); } catch (e) {}
+        l = l || (navigator.language || "en").slice(0, 2);
+        if (!t[l]) { return; }
+        document.documentElement.lang = l;
+        document.title = t[l][0] + " | CRD Berlin";
+        document.getElementById("ty-title").textContent = t[l][0];
+        document.getElementById("ty-text").textContent = t[l][1];
+        document.getElementById("ty-back").textContent = t[l][2];
+    })();
+</script>
 
 </body>
 
