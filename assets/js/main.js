@@ -8,7 +8,8 @@
 
     var CONTACT_EMAIL = "info@crd-berlin.de";
     var WHATSAPP_NUMBER = "4915756614358"; // international format, no "+" or "00"
-    var FORM_ENDPOINT = "https://formsubmit.co/ajax/" + CONTACT_EMAIL;
+    // FormSubmit alias (random string) – keeps the receiving inbox private.
+    var FORM_ENDPOINT = "https://formsubmit.co/ajax/212dc6ca666d0012a8359f24960a541a";
     var CONSENT_KEY = "crd-cookie-consent";
 
     // Microsoft Clarity project ID (heatmaps & session recordings).
@@ -239,8 +240,8 @@
 
     /* ==========================================================
        CONTACT FORM
-       Sends the form via FormSubmit (formsubmit.co) to
-       info@crd-berlin.de. No server needed – works on GitHub Pages.
+       Sends the form via FormSubmit (formsubmit.co) using a
+       private alias. No server needed – works on GitHub Pages.
     ========================================================== */
 
     function initContactForm() {
