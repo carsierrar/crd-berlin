@@ -453,7 +453,7 @@ textarea{
 }
 
 .services-grid .service-card{
-    flex:0 1 calc((100% - 60px) / 3);
+    flex:0 1 calc((100% - 30px) / 2);
 }
 
 .service-card{
