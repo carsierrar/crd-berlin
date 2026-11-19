@@ -102,6 +102,7 @@ def structured_data(lang, tx):
                 "founder": {
                     "@type": "Person",
                     "name": "Carlos Andrés Richter Moreno",
+                    "image": SITE + "/assets/images/carlos-richter-moreno.jpg",
                     "jobTitle": "Gründer & Inhaber",
                     "sameAs": ["https://www.linkedin.com/in/carlos-richter-moreno/"],
                 },
